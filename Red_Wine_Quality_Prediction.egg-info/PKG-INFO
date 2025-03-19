@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: Red-Wine-Quality-Prediction
+Version: 0.0.1
+Summary: A Machine Learning model which predicts the wine quality.
+Home-page: https://github.com/kishor2004reddy/RedWineQuality.git
+Author: Kishor Reddy
+Author-email: kishorreddy6407@gmail.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: notebook
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# Red Wine Quality Prediction
+
+```bash
+python -m pip install -r requirements.txt
+```
+

@@ -1,0 +1,5 @@
+[2025-03-19 21:48:53,080: INFO: main: Hello I run main.py]
+[2025-03-19 21:49:10,229: WARNING: main: Hello I run main.py]
+[2025-03-19 21:49:20,406: ERROR: main: Hello I run main.py]
+[2025-03-19 21:58:50,176: ERROR: main: Hello I run main.py]
+[2025-03-19 21:59:49,690: ERROR: main: Hello I run main.py]
