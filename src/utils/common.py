@@ -7,7 +7,7 @@ import joblib
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
-from typing import Any
+from typing import Any, List, Union
 
 
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
@@ -40,18 +40,20 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         raise RuntimeError(f"An unexpected error occurred while reading {path_to_yaml}: {e}")
 
 
-@ensure_annotations
-def create_directories(path_to_directories: list[Path], verbose=True) -> None:
-    """ Creates Directories of the passed paths of list
-
-    :param path_to_directories: list of paths of directories to be created
-    :param verbose: False if logging of creation of directories is not required
-    :return: None
+def create_directories(directory_list: List[str]) -> None:
     """
-    for path in path_to_directories:
-        os.makedirs(path, exist_ok=True)
-        if verbose:
-            logger.info(f"{path} directory created successfully")
+    Create multiple directories from a list of paths.
+
+    :param directory_list: A list of directory paths to create.
+    """
+    for path in directory_list:
+        try:
+            os.makedirs(path)
+            print(f"Directory '{path}' created successfully.")
+        except FileExistsError:
+            print(f"Directory '{path}' already exists.")
+        except Exception as e:
+            print(f"An error occurred while creating the directory '{path}': {e}")
 
 
 @ensure_annotations
@@ -189,3 +191,16 @@ def load_bin(path: Path) -> ConfigBox:
     except Exception as e:
         raise RuntimeError(f"An unexpected error occurred while loading binary file from {path}: {e}")
 
+
+@ensure_annotations
+def get_size(path: Path) -> str:
+    """
+    Get the size of a file in kilobytes (KB).
+
+    :param path: Path object representing the file path.
+    :type path: pathlib.Path
+    :return: A string representation of the file size in KB.
+    :rtype: str
+    """
+    size_in_kb = round(os.path.getsize(path) / 1024)
+    return f"~ {size_in_kb} KB"

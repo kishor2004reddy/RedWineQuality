@@ -3,3 +3,5 @@ WineQualityVENV/
 
 # Ignore PyCharm config files
 .idea/
+
+__pychache__/
