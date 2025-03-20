@@ -1,7 +1,13 @@
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
+pandas 
 notebook
+numpy
+scikit-learn
+matplotlib
+python-box==6.0.2
+pyYAML
+ensure==1.0.2
+joblib
+types-PyYAML
+Flask
+Flask-Cors
 -e .
