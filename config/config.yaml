@@ -1,8 +1,13 @@
 artifacts_root: artifacts
 
 data_ingestion:
-  root_dir: "artifacts/data_ingestion"
-  source_URL: "https://github.com/kishor2004reddy/Datasets/raw/refs/heads/main/WineQuality.zip"
-  local_data_file: "artifacts/data_ingestion/data.zip"
-  unzip_dir: "artifacts/data_ingestion"
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/kishor2004reddy/Datasets/raw/refs/heads/main/WineQuality.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
 
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/winequality-red.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
