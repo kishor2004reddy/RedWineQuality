@@ -1,6 +1,7 @@
 from src.logging import logger
 from src.pipeline.stage_1_data_ingestion import DataIngestionTrainingPipeline
 from src.pipeline.stage_2_data_validation import DataValidationTrainingPipeline
+from src.pipeline.stage_3_data_transformation import DataTransformationTrainingPipeline
 
 StageName = "Data Ingestion"
 try:
@@ -21,4 +22,13 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
-g
+
+StageName = "Data Transformation"
+try:
+    logger.info(f"Stage {StageName} Started")
+    pipe = DataTransformationTrainingPipeline()
+    pipe.main()
+    logger.info(f"Stage {StageName} Completed")
+except Exception as e:
+    logger.exception(e)
+    raise e
