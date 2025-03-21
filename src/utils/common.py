@@ -56,7 +56,8 @@ def create_directories(directory_list: List[str]) -> None:
             print(f"An error occurred while creating the directory '{path}': {e}")
 
 
-@ensure_annotations
+
+
 def save_json(path: Path, data: dict) -> None:
     """
         Saves a dictionary to a JSON file.

@@ -4,7 +4,8 @@ from src.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 
 
@@ -73,3 +74,18 @@ class ConfigurationManager:
             target_column=schema.name
         )
         return model_trainer_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.ElasticNet
+        create_directories([config.root_dir])
+
+        model_eval_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            metric_file_name=config.metric_file_name,
+            all_params=params,
+            target_column=self.schema.TARGET_COLUMN.name
+        )
+        return model_eval_config
