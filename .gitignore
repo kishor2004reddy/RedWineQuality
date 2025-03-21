@@ -1,7 +1,3 @@
-# Ignore the virtual environment
 WineQualityVENV/
-
-# Ignore PyCharm config files
 .idea/
-
 __pychache__/
