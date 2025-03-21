@@ -41,7 +41,7 @@ class DataIngestion:
                     filename=self.config.local_data_file
                 )
                 logger.info(f"File downloaded successfully: {filename}")
-                logger.debug(f"Download headers: {headers}")
+                logger.info(f"Download headers: \n{dict(headers.items())}")
             except Exception as e:
                 logger.error(f"Failed to download file from {self.config.source_URL}: {e}")
                 raise

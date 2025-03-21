@@ -1,3 +1,10 @@
 WineQualityVENV/
 .idea/
-__pychache__/
+src/__pycache__/
+src/components/__pycache__/
+src/config/__pycache__/
+src/constants/__pycache__/
+src/entity/__pycache__/
+src/logging/__pycache__/
+src/pipeline/__pycache__/
+src/utils/__pycache__/
