@@ -19,8 +19,6 @@ class ModelTrainer:
         y_train = train[self.config.target_column]
         y_test = test[self.config.target_column]
 
-        print(X_train.shape, y_train.shape)
-
         en = ElasticNet(alpha=self.config.alpha, l1_ratio=self.config.l1_ratio, random_state=42)
         en.fit(X_train, y_train)
 
